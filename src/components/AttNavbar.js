@@ -24,7 +24,7 @@ export default class AttNavbar extends React.Component {
   
   render() {
     return (
-        <Navbar color="dark" dark expand="md">
+        <Navbar dark expand="md">
           <NavbarToggler onClick={this.toggle} className="mr-2"/>
           <div className="navbar-brand">
             <Link to="/">
@@ -45,22 +45,12 @@ export default class AttNavbar extends React.Component {
               </NavItem>
               <NavItem>
                 <div className="nav-link">
-                  <Link to="/blog-with-fetch">Blog w/Fetch</Link>
+                  <Link to="/photos">Photos</Link>
                 </div>
               </NavItem>
               <NavItem>
                 <div className="nav-link">
-                  <Link to="/blog-dynamic">Blog w/MD Files</Link>
-                </div>
-              </NavItem>
-              <NavItem>
-                <div className="nav-link">
-                  <Link to="/blog-pagination">Blog w/Pagination</Link>
-                </div>
-              </NavItem>
-              <NavItem>
-                <div className="nav-link">
-                  <Link to="/admin">Client App</Link>
+                  <Link to="/admin">Admin</Link>
                 </div>
               </NavItem>
             </Nav>

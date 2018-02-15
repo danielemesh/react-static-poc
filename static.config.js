@@ -1,11 +1,14 @@
 import axios from 'axios'
 
 export default {
+  //bundleAnalyzer: true,
   getSiteProps: () => ({
     title: 'React Static',
   }),
   getRoutes: async () => {
-    const { data: posts } = await axios.get('https://jsonplaceholder.typicode.com/posts')
+    const { data: posts } = await axios.get('https://jsonplaceholder.typicode.com/posts');
+    const { data: photos } = await axios.get('http://jsonplaceholder.typicode.com/photos?albumId=1');
+    
     return [
       {
         path: '/',
@@ -28,6 +31,13 @@ export default {
             post,
           }),
         })),
+      },
+      {
+        path     : '/photos',
+        component: 'src/containers/Photos',
+        getProps : () => ({
+          photos
+        })
       },
       {
         is404: true,
